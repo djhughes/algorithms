@@ -1,5 +1,7 @@
 package net.davehughes.algorithms.sorting;
 
+import net.davehughes.algorithms.utils.TestUtils;
+
 import java.util.Arrays;
 
 public class BucketSort {
@@ -22,13 +24,16 @@ public class BucketSort {
     }
   }
 
-
   public static void main(String[] args) {
-    int maxValue = 5;
-    int[] values = {5, 3, 0, 2, 4, 1, 0, 5, 2, 3, 1, 4};
+    int n = 12;
+    int max = 5;
 
-    System.out.println("Before: " + Arrays.toString(values));
-    sort(values, maxValue);
-    System.out.println("After:  " + Arrays.toString(values));
+    int[] values = TestUtils.generateIntegerValues(n, max);
+
+    System.out.println(Arrays.toString(values));
+
+    sort(values, max);
+
+    System.out.println(Arrays.toString(values));
   }
 }

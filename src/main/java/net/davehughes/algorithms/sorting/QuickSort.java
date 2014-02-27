@@ -1,5 +1,7 @@
 package net.davehughes.algorithms.sorting;
 
+import net.davehughes.algorithms.utils.TestUtils;
+
 import java.util.Arrays;
 
 /**
@@ -57,8 +59,15 @@ public class QuickSort {
   }
 
   public static void main(String[] args) {
-    int[] values = {4, 2, 7, 1, 3, 8, 5, 9, 0, 6};
+    int n = 10;
+    int max = 9;
+
+    int[] values = TestUtils.generateIntegerValues(n, max);
+
+    System.out.println(Arrays.toString(values));
+
     sort(values);
+
     System.out.println(Arrays.toString(values));
   }
 }
