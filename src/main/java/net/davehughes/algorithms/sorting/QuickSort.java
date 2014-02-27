@@ -3,45 +3,45 @@ package net.davehughes.algorithms.sorting;
 import java.util.Arrays;
 
 /**
- * This is a simple implementation of QuickSort that operates on an array of integers.
+ * Simple implementation of QuickSort that operates on an array of integers.
  */
 public class QuickSort {
-  public static void sort(int[] arr) {
-    quickSort(arr, 0, arr.length - 1);
+  public static void sort(int[] values) {
+    quickSort(values, 0, values.length - 1);
   }
 
-  private static void quickSort(int[] arr, int left, int right) {
-    int index = partition(arr, left, right);
+  private static void quickSort(int[] values, int left, int right) {
+    int index = partition(values, left, right);
 
     if (left < index - 1) {
       // Sort left half
-      quickSort(arr, left, index - 1);
+      quickSort(values, left, index - 1);
     }
 
     if (index < right) {
       // Sort right half
-      quickSort(arr, index, right);
+      quickSort(values, index, right);
     }
   }
 
-  private static int partition(int[] arr, int left, int right) {
+  private static int partition(int[] values, int left, int right) {
     // Pick pivot point to be in the middle
-    int pivot = arr[(left + right) / 2];
+    int pivot = values[(left + right) / 2];
 
     while (left <= right) {
       // Find element on left that should be on right
-      while (arr[left] < pivot) {
+      while (values[left] < pivot) {
         left++;
       }
 
       // Find element on right that should be on left
-      while (arr[right] > pivot) {
+      while (values[right] > pivot) {
         right--;
       }
 
       // Swap elements, and move left and right indices
       if (left <= right) {
-        swap(arr, left, right);
+        swap(values, left, right);
         left++;
         right--;
       }
@@ -50,10 +50,10 @@ public class QuickSort {
     return left;
   }
 
-  private static void swap(int[] arr, int left, int right) {
-    int tmp = arr[left];
-    arr[left] = arr[right];
-    arr[right] = tmp;
+  private static void swap(int[] values, int left, int right) {
+    int tmp = values[left];
+    values[left] = values[right];
+    values[right] = tmp;
   }
 
   public static void main(String[] args) {
