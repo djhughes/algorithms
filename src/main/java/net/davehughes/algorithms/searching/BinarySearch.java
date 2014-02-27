@@ -1,6 +1,10 @@
 package net.davehughes.algorithms.searching;
 
+/**
+ * Implementation of binary search that operates on an array of integers.
+ */
 public class BinarySearch {
+
   public static int search(int[] values, int target) {
     int low = 0;
     int high = values.length - 1;
